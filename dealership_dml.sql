@@ -88,6 +88,9 @@ INSERT INTO service_ticket (
     2
 );
 
+select *
+from service_ticket;
+
 INSERT INTO service_history(
     repair_done,
     sv_ticket_id
@@ -109,6 +112,16 @@ INSERT INTO mechanic_assignment(
     2,
     2
 );
+
+UPDATE cars
+SET sv_history_id = 1
+WHERE car_id = 1;
+
+UPDATE cars
+SET sv_history_id = 2
+WHERE car_id = 2;
+
+
 
 SELECT *
 FROM cars;
