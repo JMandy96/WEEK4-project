@@ -81,11 +81,6 @@ INSERT INTO service_ticket (
     '2023-07-25',
     1,
     1
-), (
-    'old oil',
-    '2022-12-31',
-    2,
-    2
 );
 
 INSERT INTO service_history(
@@ -94,9 +89,6 @@ INSERT INTO service_history(
 ) VALUES (
     'new exhaust flex pipe',
     1
-), (
-    'oil change',
-    2
 );
 
 INSERT INTO mechanic_assignment(
@@ -105,20 +97,75 @@ INSERT INTO mechanic_assignment(
 ) VALUES (
     1,
     1
-), (
-    2,
-    2
 );
 
 UPDATE cars
 SET sv_history_id = 1
 WHERE car_id = 1;
 
+INSERT INTO cars(
+    make,
+    model,
+    car_year,
+    new_or_used
+) VALUES (
+    'Jeep',
+    'Grand Cherokee',
+    2022,
+    'new'
+);
+
+INSERT INTO invoice(
+    invoice_date,
+    amount
+) VALUES (
+    '2023-02-25',
+    1648.25
+);
+
+INSERT INTO customer(
+    full_name,
+    driver_license,
+    car_id,
+    invoice_id
+) VALUES (
+    'Sheryl M',
+    'MICHID',
+    3,
+    3
+);
+
+INSERT INTO service_ticket(
+    issues,
+    sv_date,
+    customer_id,
+    car_id
+) VALUES (
+    'tire rotation',
+    '2023-02-25',
+    3,
+    3
+);
+
+INSERT INTO service_history(
+    repair_done,
+    sv_ticket_id
+) VALUES (
+    'rotated tires',
+    2
+);
+
+INSERT INTO mechanic_assignment(
+    mechanic_id,
+    sv_ticket_id
+) VALUES (
+    2,
+    2
+);
+
 UPDATE cars
 SET sv_history_id = 2
-WHERE car_id = 2;
-
-
+WHERE car_id = 3;
 
 SELECT *
 FROM cars;
