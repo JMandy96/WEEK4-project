@@ -88,9 +88,6 @@ INSERT INTO service_ticket (
     2
 );
 
-select *
-from service_ticket;
-
 INSERT INTO service_history(
     repair_done,
     sv_ticket_id
